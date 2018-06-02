@@ -20,24 +20,7 @@ using namespace std;
 
 using namespace std;
 
-int reverse(int x){
-    stringstream ss;
-    ss << x;
-    string str;
-    ss >> str;
-    reverse(str.begin(), str.end());
-    ss.clear();
-    ss << str;
-    ss >> x;
-    return x;
-}
 
-int getMilliCount(){
-	timeb tb;
-	ftime(&tb);
-	int nCount = tb.millitm + (tb.time & 0xfffff) * 10000;
-	return nCount;
-}
 
 Arista::Arista(int my_nodo1,int my_nodo2,double my_weight){
 	nodo1=my_nodo1;
@@ -57,6 +40,24 @@ double Arista::Get_Weight(){
 	return weight;
 }
 
-/*                  ---------------------------------               */
+/*    funciones   ---------------------------------   Cementerio    
 
+int reverse(int x){
+    stringstream ss;
+    ss << x;
+    string str;
+    ss >> str;
+    reverse(str.begin(), str.end());
+    ss.clear();
+    ss << str;
+    ss >> x;
+    return x;
+}
 
+int getMilliCount(){
+	timeb tb;
+	ftime(&tb);
+	int nCount = tb.millitm + (tb.time & 0xfffff) * 10000;
+	return nCount;
+}
+*/
