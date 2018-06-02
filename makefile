@@ -3,7 +3,7 @@ FLAGS = -std=c++11 -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
 DEPENDENCIAS = main.o arista.o vertice.o grafo.o
 
 grafo: $(DEPENDENCIAS)
-	$(CC) -o grafo $(DEPENDENCIAS)
+	$(CC) $(FLAGS) -o grafo $(DEPENDENCIAS)
 	
 main.o: main.cpp
 	$(CC) -c main.cpp
