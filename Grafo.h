@@ -2,6 +2,6 @@
 #define _GRAFO
 class Grafo {
 
-}
+};
 
 #endif
