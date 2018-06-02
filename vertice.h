@@ -1,7 +1,7 @@
 #ifndef _VERTICE
 #define _VERTICE
 class Vertice {
-private:
+protected:
     int name;
     static int n_vertice;
 public:

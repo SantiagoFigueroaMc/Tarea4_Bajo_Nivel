@@ -1,6 +1,7 @@
 # include<iostream>
 # include "vertice.h"
 # include "arista.h"
+# include "grafo.h"
 # include <ctime>
 # include <math.h>
 
@@ -11,17 +12,17 @@ void add_arco(int d, int h, int w){
 
 // Agregua un nodo y retorne el número que lo identifica. Los nodos serán identificados por un número secuencial que comenzará en cero.
 int add_nodo(){
-
+	return 0;
 }
 
 // Retorna true si existe un arco entre d y h, en la dirección (d ->h) o false en caso contrario.
 bool hay_arco(int d, int h){
-
+	return true;
 }
 
 // Retorna true si existe un camino entre d y h o false en caso contrario.
 bool hay_camino(int d, int h){
-
+	return true;
 }
 
 /*
@@ -45,7 +46,7 @@ float random(int i=0, int f=1){
 }*/
 
 int main (){
-	
+
 	return 0;
 }
 
