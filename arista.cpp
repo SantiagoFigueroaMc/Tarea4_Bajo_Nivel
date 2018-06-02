@@ -1,5 +1,5 @@
 /*#include<iostream>
-#include<stdlib.h>
+
 #include<string>
 #include<sstream>
 
@@ -7,14 +7,44 @@
 #include<stack>
 #include<queue>
 
-#inlcude"vertice.h"*/
-#inlcude"arista.h"
+#include"vertice.h"*/
+#include"arista.h"
+#include <sys/timeb.h>
 
 using namespace std;
 
-Arista::Arista(int n1,int n2){
-	nodo1=n1;
-	nodo2=n2;
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+
+using namespace std;
+
+int reverse(int x){
+    stringstream ss;
+    ss << x;
+    string str;
+    ss >> str;
+    reverse(str.begin(), str.end());
+    ss.clear();
+    ss << str;
+    ss >> x;
+    return x;
+}
+
+int getMilliCount(){
+	timeb tb;
+	ftime(&tb);
+	int nCount = tb.millitm + (tb.time & 0xfffff) * 10000;
+	return nCount;
+}
+
+Arista::Arista(int my_nodo1,int my_nodo2){
+	nodo1=my_nodo1;
+	nodo2=my_nodo2;
+	for(int i = 0; i < 1000000; i++){int a = 55/16;}
+	int my_num=getMilliCount() % 1000;
+	weight=(reverse(my_num)/1000.);
 }
 
 int Arista::Get_Nodo1(){
@@ -28,5 +58,7 @@ int Arista::Get_Nodo2(){
 double Arista::Get_Weight(){
 	return weight;
 }
+
+/*                  ---------------------------------               */
 
 

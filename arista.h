@@ -16,7 +16,6 @@ public:
 	int Get_Nodo1();
 	int Get_Nodo2();
 	double Get_Weight();
-	
 };
 
 #endif
