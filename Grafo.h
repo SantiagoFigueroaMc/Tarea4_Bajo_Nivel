@@ -1,5 +1,7 @@
 #ifndef _GRAFO
 #define _GRAFO
-class Grafo
+class Grafo {
+
+}
 
 #endif
