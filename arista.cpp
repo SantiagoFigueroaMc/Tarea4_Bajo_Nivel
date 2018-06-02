@@ -39,12 +39,10 @@ int getMilliCount(){
 	return nCount;
 }
 
-Arista::Arista(int my_nodo1,int my_nodo2){
+Arista::Arista(int my_nodo1,int my_nodo2,double my_weight){
 	nodo1=my_nodo1;
 	nodo2=my_nodo2;
-	for(int i = 0; i < 1000000; i++){int a = 55/16;}
-	int my_num=getMilliCount() % 1000;
-	weight=(reverse(my_num)/1000.);
+	weight=my_weight;
 }
 
 int Arista::Get_Nodo1(){

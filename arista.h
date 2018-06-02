@@ -10,7 +10,7 @@ private:
 	double weight;
 public:
 	//constructor:
-	Arista(int,int);
+	Arista(int,int,double);
 	
 	//metodos:
 	int Get_Nodo1();
