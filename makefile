@@ -14,8 +14,8 @@ arista.o: arista.cpp arista.h
 vertice.o: vertice.cpp vertice.h
 	$(CC) -c vertice.cpp
 
-grafo.o: Grafo.cpp Grafo.h
-	$(CC) -c Grafo.cpp
+grafo.o: grafo.cpp grafo.h
+	$(CC) -c grafo.cpp
 
 clean:
 	rm grafo
