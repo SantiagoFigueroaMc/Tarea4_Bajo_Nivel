@@ -10,6 +10,6 @@ int Vertice::GetName(){
     return name;
 }
 
-static int Vertice::GetN_Vertice(){
+int Vertice::GetN_Vertice(){
     return n_vertice;
 }

@@ -1,6 +1,6 @@
 CC = g++
 FLAGS = -std=c++11 -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
-DEPENDENCIAS = main.o arista.o vertice.o
+DEPENDENCIAS = main.o arista.o vertice.o grafo.o
 
 grafo: $(DEPENDENCIAS)
 	$(CC) $(FLAGS) -o grafo $(DEPENDENCIAS)
@@ -13,6 +13,9 @@ arista.o: arista.cpp arista.h
 
 vertice.o: vertice.cpp vertice.h
 	$(CC) -c vertice.cpp
+
+grafo.o: Grafo.cpp Grafo.h
+	$(CC) -c Grafo.cpp
 
 clean:
 	rm grafo
