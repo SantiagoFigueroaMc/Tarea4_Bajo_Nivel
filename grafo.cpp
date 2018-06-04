@@ -20,6 +20,9 @@ bool Grafo::hay_arco(int d, int h){
 
 // Retorna true si existe un camino entre d y h o false en caso contrario.
 bool Grafo::hay_camino(int d, int h){
-	return true;
+	if (Is_TwoWay(&vertices, d, h)){
+		return true;
+	}
+	return false;
 }
 

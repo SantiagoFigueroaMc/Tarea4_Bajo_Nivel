@@ -57,7 +57,7 @@ bool Is_OneWay(node *H, int A, int B){
 	ss << A << B;
 	node *Nodo_Temporal = H;
 	while (GetNext(Nodo_Temporal)){
-		if (GetValue(Nodo_Temporal) == s.str()){
+		if (GetValue(Nodo_Temporal) == ss.str()){
 			return true;
 		}
 		Nodo_Temporal = GetNext(Nodo_Temporal);
