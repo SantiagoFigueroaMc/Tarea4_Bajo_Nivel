@@ -1,5 +1,6 @@
 #ifndef _VERTICE
 #define _VERTICE
+# include "node.h"
 class Vertice {
 protected:
     int name;
