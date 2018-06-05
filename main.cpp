@@ -27,6 +27,16 @@ float random(int i=0, int f=1){
 }*/
 
 int main (){
+	cout<<"welcome to main"<<endl;
+	Grafo waze=Grafo();
+	cout<<"funciona"<<endl;
+	Grafo maps=Grafo(10);
+	cout<<"ya no funciona"<<endl;
+	Grafo moovit=Grafo();
+	Grafo santiago=Grafo(5);//tira error con por los mallocs, tal vez...
+	cout<<"funcionaba :D"<<endl;
+	
+
 
 	return 0;
 }

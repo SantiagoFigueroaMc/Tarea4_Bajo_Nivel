@@ -2,6 +2,18 @@ CC = g++
 FLAGS = -std=c++11 -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
 DEPENDENCIAS = main.o arista.o vertice.o grafo.o node.o
 
+run: grafo
+	./grafo
+	make clean
+
+ninja:
+	$(CC) $(FLAGS) -c -o main.o main.cpp
+	$(CC) $(FLAGS) -c -o arista.o arista.cpp
+	$(CC) $(FLAGS) -c -o vertice.o vertice.cpp
+	$(CC) $(FLAGS) -c -o grafo.o grafo.cpp
+	$(CC) $(FLAGS) -c -o node.o node.cpp
+	$(CC) $(FLAGS) -c -o main.o main.cpp
+
 grafo: $(DEPENDENCIAS)
 	$(CC) $(FLAGS) -o grafo $(DEPENDENCIAS)
 	

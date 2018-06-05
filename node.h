@@ -8,7 +8,7 @@ using namespace std;
 // Estructura de un nodo (casilla), contenido (KB, PW, " ")
 // y un puntero al proximo nodo.
 typedef struct node {
-	string aristas_nodo;
+	string aristas_nodo;//toda la información se guarda en strings
 	struct node *nextNode;
 } node;
 
