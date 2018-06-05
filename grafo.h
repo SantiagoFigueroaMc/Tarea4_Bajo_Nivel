@@ -6,8 +6,8 @@
 class Grafo {
 private:
 	// Lista de vectores:
-	node aristas;// Esta sera una lista con todas las aristas
-	node vertices;// Esta sera una lista con todos los vertices
+	node * aristas;// Esta sera una lista con todas las aristas
+	node * vertices;// Esta sera una lista con todos los vertices
 
 public:
 	void add_arco(int, int, int);// arista 1 ----> arista 2 y peso
