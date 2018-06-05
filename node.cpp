@@ -6,12 +6,31 @@ using namespace std;
 void SetValue(node *n,int A, int B){
 	stringstream ss = stringstream();
 	ss << A << B;
-	n -> aristas = ss.str();
+	n -> aristas_nodo = ss.str();
+}
+
+void addnode(node * list,string add){
+	node * newlist=list;
+    while (newlist->nextNode != NULL) {
+        newlist=newlist->nextNode;
+    }
+    newlist->nextNode =(node *)malloc(sizeof(*newlist));//el error esaba aqui, estaba guardando memoria para un entero, no lo apuntado
+    newlist->nextNode->nextNode = NULL;
+	newlist->nextNode->aristas_nodo = add;
+}
+
+void addnode(node * list){//añade un nodo
+	node * newlist=list;
+    while (newlist->nextNode != NULL) {
+        newlist=newlist->nextNode;
+    }
+    newlist->nextNode =(node *)malloc(sizeof(*newlist));//el error esaba aqui, estaba guardando memoria para un entero, no lo apuntado
+    newlist->nextNode->nextNode = NULL;
 }
 
 //Metodo que retorna el contenido de un nodo n.
 string GetValue(node *n){
-	return n -> aristas;
+	return n -> aristas_nodo;
 }
 
 //Metodo que setea a un nodo n como nodo siguiente de un nodo h.
@@ -52,7 +71,7 @@ bool Is_TwoWay(node *H, int A, int B){
 
 //Metodo para ver si existe un camino entre dos nodos.
 // A ---> B
-bool Is_OneWay(node *H, int A, int B){
+bool Is_OneWay(node * H, int A, int B){
 	stringstream ss = stringstream();
 	ss << A << B;
 	node *Nodo_Temporal = H;

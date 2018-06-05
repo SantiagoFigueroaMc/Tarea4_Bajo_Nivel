@@ -8,9 +8,15 @@ using namespace std;
 // Estructura de un nodo (casilla), contenido (KB, PW, " ")
 // y un puntero al proximo nodo.
 typedef struct node {
-	string aristas;
+	string aristas_nodo;
 	struct node *nextNode;
 } node;
+
+//añade un nodo con su respectivo valor
+void addnode(node * list,string add);
+
+//añade un nodo
+void addnode(node * list);
 
 //Metodo que define las aristas que estan unidas
 void SetValue(node *n, int A, int B);
