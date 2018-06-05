@@ -1,8 +1,12 @@
 #ifndef _GRAFO
 #define _GRAFO
+
+template<typename V>
+
 class Grafo {
 private:
 	//vectores
+
 public:
 	void add_arco(int , int , int );
 	int add_nodo();
