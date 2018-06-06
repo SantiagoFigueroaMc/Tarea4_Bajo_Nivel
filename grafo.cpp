@@ -10,8 +10,7 @@
 
 //Crea un Grafo Vacio
 Grafo::Grafo(){
-/*	vector<Arista> aristas;
-	vector<Vertice> vertices;*/
+
 	aristas.clear();
 	vertices.clear();
 	vertices_creados=Vertice::GetN_Vertice();
@@ -20,8 +19,6 @@ Grafo::Grafo(){
 //Crea un grafo con n vertices
 Grafo::Grafo(int numnodos){
 	int vertices_iniciales=numnodos;
-/*	vector<Arista> aristas;
-	vector<Vertice> vertices;*/
 	aristas.clear();
 	vertices_creados=Vertice::GetN_Vertice();
 	for (int i=0;i<numnodos;i++){
