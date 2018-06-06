@@ -1,22 +1,8 @@
-/*#include<iostream>
-
-#include<string>
-#include<sstream>
-
-#include<list>
-#include<stack>
-#include<queue>
-
-#include"vertice.h"*/
-#include"arista.h"
-#include <sys/timeb.h>
-
-using namespace std;
-
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <algorithm>
+
+#include"arista.h"
 
 using namespace std;
 
@@ -36,12 +22,19 @@ int Arista::Get_Nodo2(){
 	return nodo2;
 }
 
-double Arista::Get_Weight(){
+int Arista::Get_Weight(){
 	return weight;
 }
 
-/*    funciones   ---------------------------------   Cementerio    
+string Arista::Get_Arista(){
+ stringstream ss;
+	ss<<nodo1<<nodo2;
+	return ss.str();
+}
 
+/*    funciones   ---------------------------------   Cementerio    
+#include <algorithm>
+#include <sys/timeb.h>
 int reverse(int x){
     stringstream ss;
     ss << x;

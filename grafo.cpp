@@ -29,13 +29,14 @@ Grafo::Grafo(int numnodos){
 
 // Crea un arco entre las aristas d y h, donde la dirección es desde d a h y el peso es w.
 void Grafo::add_arco(int d, int h, int w){
-
+	Arista ari=Arista(d,h,w);
+	aristas.push_back(ari);
 }
 
 // Agregua un nodo y retorne el número que lo identifica. Los nodos serán identificados por un número secuencial que comenzará en cero.
 int Grafo::add_nodo(){
 	int nodo_name=vertices.size()+1;
-	Vertice ver=Vertice(nodo_name);
+	Vertice ver=Vertice(nodo_name-1);
 	vertices.push_back(ver);
 	return vertices[nodo_name-1].GetName();
 }
