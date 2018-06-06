@@ -1,8 +1,6 @@
 #ifndef ARISTA
 #define ARISTA
 
-
-
 class Arista{
 private:
 	int nodo1;//int es el nombre del nodo

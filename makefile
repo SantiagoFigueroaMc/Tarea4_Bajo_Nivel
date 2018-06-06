@@ -1,6 +1,6 @@
 CC = g++
 FLAGS = -std=c++11 -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
-DEPENDENCIAS = main.o arista.o vertice.o grafo.o node.o
+DEPENDENCIAS = main.o arista.o vertice.o grafo.o
 
 run: grafo
 	./grafo
@@ -11,7 +11,7 @@ ninja:
 	$(CC) $(FLAGS) -c -o arista.o arista.cpp
 	$(CC) $(FLAGS) -c -o vertice.o vertice.cpp
 	$(CC) $(FLAGS) -c -o grafo.o grafo.cpp
-	$(CC) $(FLAGS) -c -o node.o node.cpp
+
 	$(CC) $(FLAGS) -c -o main.o main.cpp
 
 grafo: $(DEPENDENCIAS)
