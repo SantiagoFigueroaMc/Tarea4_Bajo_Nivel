@@ -110,6 +110,8 @@ int main (){
 	printA(*moovit);
 	printA(*santiago);
 	printA(*extra);
+	cout<<waze->hay_arco(1,2)<<","<<waze->hay_arco(2,1);
+	cout<<","<<waze->hay_arco(0,3)<<endl;
 
 	delete(waze);delete(maps);delete(moovit);delete(santiago);delete(extra);
 	return 0;

@@ -1,4 +1,5 @@
 #include<sstream>
+#include<string>
 
 # include "grafo.h"
 #include "vertice.h"
@@ -41,6 +42,35 @@ int Grafo::add_nodo(){
 	return vertices[nodo_name-1].GetName();
 }
 
+
+//Metodo para ver si existe un camino entre dos nodos.
+// A ---> B
+bool Grafo::hay_arco(int d, int h){
+	stringstream ss = stringstream();
+	ss << d << h;
+	int c=0;
+	string avector,abuscada=ss.str();
+	Arista arco=GetArista(c);
+	while (c<aristas.size()){
+		Arista arco=GetArista(c);
+		avector=arco.Get_Arista();
+		if ((avector[0] == abuscada[0]) && (avector[1] == abuscada[1])){
+				return true;
+			}
+		c++;//GET IT? C plus plus XD
+	}
+	return false;
+}
+/*
+// Retorna true si existe un camino entre d y h o false en caso contrario.
+bool Grafo::hay_camino(int d, int h){
+	if (Is_TwoWay(vertices, d, h)){//ya no se pasa por referencia, porque se trabaja con direcciones de memoria
+		return true;
+	}
+	return false;
+}
+*/
+
 //metodos que retornan valores
 unsigned int Grafo::GetLenVertices(){
 	return vertices.size();	
@@ -64,6 +94,23 @@ int Grafo::GetVertices_Creados(){
 }
 
 /*
+bool Is_OneWay(const vector<Arista>& vecA, int A, int B){
+	stringstream ss = stringstream();
+	ss << A << B;
+	int c=0;
+	string avector,abuscada=ss.str();
+	while (c<vecA.strlen()){
+		avector=vecA[c].Get_Arista();
+		if (avector[0]) == abuscada[0]){
+			if (avector[1]) == abuscada[1]){
+				return true;
+			}
+		}
+		c++;//GET IT? C plus plus XD
+	}
+	return false;
+}
+
 // Retorna true si existe un arco entre d y h, en la dirección (d ->h) o false en caso contrario.
 bool Grafo::hay_arco(int d, int h){
 	if (Is_OneWay(vertices, d, h)){//ya no se pasa por referencia, porque se trabaja con direcciones de memoria
@@ -71,6 +118,31 @@ bool Grafo::hay_arco(int d, int h){
 	}
 	return false;
 }
+
+bool Is_TwoWay(node *H, int A, int B){
+	stringstream ss = stringstream();
+	stringstream ss_rev = stringstream();
+	ss << A << B;
+	string s = ss.str();
+	ss_rev << B << A;
+	string s_rev = ss_rev.str();
+	node *Nodo_Temporal = H;
+	int ways = 0;
+	while (GetNext(Nodo_Temporal)){
+		if ((GetValue(Nodo_Temporal) == s)){
+			ways++;
+		}
+		if (GetValue(Nodo_Temporal) == s_rev){
+			ways++;
+		}
+		if (ways >= 2){
+			return true;
+		}
+		Nodo_Temporal = GetNext(Nodo_Temporal);
+	}
+	return false;
+}
+
 
 // Retorna true si existe un camino entre d y h o false en caso contrario.
 bool Grafo::hay_camino(int d, int h){
