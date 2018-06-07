@@ -1,5 +1,6 @@
 #include<sstream>
 #include<string>
+#include<stack>
 
 # include "grafo.h"
 #include "vertice.h"
@@ -61,15 +62,31 @@ bool Grafo::hay_arco(int d, int h){
 	}
 	return false;
 }
-/*
+
 // Retorna true si existe un camino entre d y h o false en caso contrario.
 bool Grafo::hay_camino(int d, int h){
-	if (Is_TwoWay(vertices, d, h)){//ya no se pasa por referencia, porque se trabaja con direcciones de memoria
-		return true;
+	stringstream ss = stringstream();
+	ss << d << h;
+	string avector,abuscada=ss.str();
+	stack<Arista> linea = stack<Arista>();
+	Arista arco=GetArista(c);
+	int c=0;
+	while (c<aristas.size()){
+		Arista arco=GetArista(c);
+		avector=arco.Get_Arista();
+		linea.push(arco);
+		if ((avector[0] == abuscada[0]) && (avector[1] == abuscada[1])){
+				return true;
+			}
+		c++;//GET IT? C plus plus XD
 	}
+	int lenstack=linea.size();
+	//función auxiliar o hacerlo por recursividad,
+	// que empieze desde el ultimo arco, a revisar en adelante
+	//hasta que encuentre el camino.
 	return false;
 }
-*/
+
 
 //metodos que retornan valores
 unsigned int Grafo::GetLenVertices(){
