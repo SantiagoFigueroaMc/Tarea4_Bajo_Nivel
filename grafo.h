@@ -36,10 +36,4 @@ public:
 	int GetVertices_Creados();
 };
 
-//Metodo para revisar si hay un valor en alguno de los nodos a partir de una cabeza H.
-bool Is_TwoWay(node *H, int A, int B);// Verdadero si hay camino de ida y vuelta
-
-//Metodo para ver si existe un camino entre dos nodos: A ---> B
-bool Is_OneWay(node *H, int A, int B);
-
 #endif
