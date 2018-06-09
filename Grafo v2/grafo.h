@@ -11,7 +11,7 @@ class Grafo {
 private:
 //Atributos:
 //  Tipo:           Nombre:
-    string          name;
+    string          name;// Nombre del grafo ("Mapa de Chile", "Red de amigos de Facebook", etc)
     vector<Node>    Nodos_pertenecientes;
     int             cantidad_nodos;
 public:
