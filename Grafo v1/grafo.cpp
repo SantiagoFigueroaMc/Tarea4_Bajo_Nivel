@@ -70,7 +70,6 @@ bool Grafo::hay_camino(int d, int h){
 	ss << d << h;
 	string avector,abuscada=ss.str();
 	stack<Arista> linea = stack<Arista>();
-	Arista arco=GetArista(c);
 	int c=0;
 	while (c<aristas.size()){
 		Arista arco=GetArista(c);

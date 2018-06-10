@@ -28,7 +28,7 @@ int Arista::Get_Weight(){
 
 string Arista::Get_Arista(){
  stringstream ss;
-	ss<<nodo1<<nodo2;
+	ss<<nodo1<<"->"<<nodo2;
 	return ss.str();
 }
 

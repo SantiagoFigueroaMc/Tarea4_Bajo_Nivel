@@ -44,7 +44,7 @@ void printV(Grafo graf){
 
 void printA(Grafo graf){
 	for (int a=0; a<graf.GetLenAristas(); a++){
-	cout << graf.GetArista(a).Get_Arista() << ",";
+	cout << graf.GetArista(a).Get_Arista() << ";";
 	}
 	cout<<"Fin Arcos"<<endl;
 	cout<<endl;
@@ -110,8 +110,8 @@ int main (){
 	printA(*moovit);
 	printA(*santiago);
 	printA(*extra);
-	cout<<waze->hay_arco(1,2)<<","<<waze->hay_arco(2,1);
-	cout<<","<<waze->hay_arco(0,3)<<endl;
+	cout<<waze->hay_arco(1,2)<<";"<<waze->hay_arco(2,1);
+	cout<<";"<<waze->hay_arco(0,3)<<endl;
 
 	delete(waze);delete(maps);delete(moovit);delete(santiago);delete(extra);
 	return 0;
