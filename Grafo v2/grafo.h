@@ -21,12 +21,14 @@ public:
 //Metodos:
 //  Tipo:           Nombre:
     int             GetName();
-    Node            GetNodo(int);   // se le pasa el id del nodo y devuelve el nodo en la posicion int
-    bool            AddNodo();      // se crea y agrega un nodo
-    bool            DeleteNodo(int);   // se le entrega el id del nodo a borrar
-    string          PrintAllNodes();// muestra todos los nodos
-    string          PrintAllConexions(int); // muestra todas las conexiones del nodo con el id entregado
-    bool            GetAdventureMap(int,int);// busca un camino entre el primer int y el segundo, que corresponden a nodos
+    Node            GetNodo(int);               // se le pasa el id del nodo y devuelve el nodo en la posicion int
+    int             AddNodo();                  // se crea y agrega un nodo
+    void            DeleteNodo(int);            // se le entrega el id del nodo a borrar
+    string          AddConexion(int, int);      // se le entrega el nodo de donde parte el camino y el nodo a unir
+    bool            DeleteConexion(int, int);   // lo mismo que el metodo anterior, pero para borrar
+    string          PrintAllNodes();            // muestra todos los nodos
+    string          PrintAllConexions(int);     // muestra todas las conexiones del nodo con el id entregado
+    bool            GetAdventureMap(int,int);   // busca un camino entre el primer int y el segundo, que corresponden a nodos
 };
 
 #endif

@@ -25,6 +25,8 @@ int main(){
     cout << "Se agregara un nuevo nodo en la red." << endl;
     mapa_1.AddNodo();
     cout << "Nodos en la red: " << mapa_1.PrintAllNodes() << endl;
+    cout << mapa_1.AddConexion(1,13) << endl;
+    
     cout << mapa_1.PrintAllConexions(1) << endl;
     cout << "Fin programa.\n\n"<<endl;
 }
