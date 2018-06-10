@@ -11,7 +11,7 @@ class Grafo {
 private:
 //Atributos:
 //  Tipo:           Nombre:
-    int             name;// Nombre del grafo (un numero.... :( )
+    int             name;// Nombre del grafo (un numero....)
     vector<Node>    Nodos_pertenecientes;
     int             cantidad_nodos;
 public:
