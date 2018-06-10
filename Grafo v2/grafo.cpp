@@ -33,3 +33,7 @@ string Grafo::PrintAllNodes(){
     }
     return salida.str();
 };
+
+bool Grafo::GetAdventureMap(int A, int B){
+// Here goes pirates stuff.... Shhh... leave
+}

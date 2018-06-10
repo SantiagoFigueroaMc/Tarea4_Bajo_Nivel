@@ -25,6 +25,7 @@ public:
     void            AddNodo();      // se crea y agrega un nodo
     void            DeleteNodo(int);   // borra el nodo en el indice
     string          PrintAllNodes();// muestra todos los nodos
+    bool            GetAdventureMap(int,int);// busca un camino entre el primer int y el segundo, que corresponden a nodos
 };
 
 #endif

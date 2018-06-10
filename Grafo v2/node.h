@@ -6,6 +6,7 @@ using namespace std;
 
 class Node {
 private:
+	
 //Atributos:
 //  Tipo:       Nombre:
 	int 		id;
@@ -19,10 +20,10 @@ public:
 	Node();
 
 //Metodos:
-//  Tipo:       Nombre:
-	void 		Add_path(Node);
-	int 		GetId();
-	queue<Node> GetConexiones();
+//  Tipo:     		Nombre:
+	void 			Add_path(Node);
+	int 			GetId();
+	queue<Node> 	GetConexiones();
 };
 
 #endif
