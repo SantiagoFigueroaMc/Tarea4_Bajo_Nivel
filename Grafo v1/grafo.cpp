@@ -20,7 +20,7 @@ Grafo::Grafo(){
 }
 //Crea un grafo con n vertices
 Grafo::Grafo(int numnodos){
-	int vertices_iniciales=numnodos;
+	vertices_iniciales=numnodos;
 	aristas.clear();
 	vertices_creados=Vertice::GetN_Vertice();
 	for (int i=0;i<numnodos;i++){
@@ -49,9 +49,8 @@ int Grafo::add_nodo(){
 bool Grafo::hay_arco(int d, int h){
 	stringstream ss = stringstream();
 	ss << d << h;
-	int c=0;
+	unsigned int c=0;
 	string avector,abuscada=ss.str();
-	Arista arco=GetArista(c);
 	while (c<aristas.size()){
 		Arista arco=GetArista(c);
 		avector=arco.Get_Arista();
@@ -65,12 +64,12 @@ bool Grafo::hay_arco(int d, int h){
 
 // Retorna true si existe un camino entre d y h o false en caso contrario.
 // d <---> h
-bool Grafo::hay_camino(int d, int h){
+bool Grafo::hay_camino(int d, int h){//incompleto
 	stringstream ss = stringstream();
 	ss << d << h;
 	string avector,abuscada=ss.str();
 	stack<Arista> linea = stack<Arista>();
-	int c=0;
+	unsigned int c=0;
 	while (c<aristas.size()){
 		Arista arco=GetArista(c);
 		avector=arco.Get_Arista();
@@ -80,7 +79,7 @@ bool Grafo::hay_camino(int d, int h){
 			}
 		c++;//GET IT? C plus plus XD
 	}
-	int lenstack=linea.size();
+
 	//función auxiliar o hacerlo por recursividad,
 	// que empieze desde el ultimo arco, a revisar en adelante
 	//hasta que encuentre el camino.

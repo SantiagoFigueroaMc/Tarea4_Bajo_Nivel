@@ -17,8 +17,8 @@ private:
 	// Lista de vectores:
 	vector<Arista> aristas;// Esta sera una lista con todas las aristas
 	vector<Vertice> vertices;// Esta sera una lista con todos los vertices
-	int vertices_iniciales;
 	int vertices_creados;
+	int vertices_iniciales;
 
 public:
 	Grafo();//crea el grafo vacio

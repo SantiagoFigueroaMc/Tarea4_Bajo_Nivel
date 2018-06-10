@@ -35,7 +35,7 @@ void printV(Grafo graf){
 	cout<< "vertices creados:" <<graf.GetVertices_Creados() <<endl;
 	cout<< "vertices iniciales:" <<graf.GetVertices_Iniciales() <<endl;
 	*/
-	for (int a=0; a<graf.GetLenVertices(); a++){
+	for (unsigned int a=0; a<graf.GetLenVertices(); a++){
 	cout << graf.GetVertice(a).GetName() << ",";
 	}
 	cout<<"Fin Nodos"<<endl;
@@ -43,7 +43,7 @@ void printV(Grafo graf){
 }
 
 void printA(Grafo graf){
-	for (int a=0; a<graf.GetLenAristas(); a++){
+	for (unsigned int a=0; a<graf.GetLenAristas(); a++){
 	cout << graf.GetArista(a).Get_Arista() << ";";
 	}
 	cout<<"Fin Arcos"<<endl;

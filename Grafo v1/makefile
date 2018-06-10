@@ -11,8 +11,7 @@ ninja:
 	$(CC) $(FLAGS) -c -o arista.o arista.cpp
 	$(CC) $(FLAGS) -c -o vertice.o vertice.cpp
 	$(CC) $(FLAGS) -c -o grafo.o grafo.cpp
-
-	$(CC) $(FLAGS) -c -o main.o main.cpp
+	$(CC) $(FLAGS) -o grafo $(DEPENDENCIAS)
 
 grafo: $(DEPENDENCIAS)
 	$(CC) $(FLAGS) -o grafo $(DEPENDENCIAS)
