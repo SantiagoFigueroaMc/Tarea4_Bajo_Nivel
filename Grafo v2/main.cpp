@@ -27,6 +27,6 @@ int main(){
     cout << "Nodos en la red: " << mapa_1.PrintAllNodes() << endl;
     cout << mapa_1.AddConexion(1,13) << endl;
     
-    cout << mapa_1.PrintAllConexions(1) << endl;
+    //cout << mapa_1.PrintAllConexions(1) << endl;
     cout << "Fin programa.\n\n"<<endl;
 }
