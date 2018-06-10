@@ -25,6 +25,7 @@ public:
     bool            AddNodo();      // se crea y agrega un nodo
     bool            DeleteNodo(int);   // se le entrega el id del nodo a borrar
     string          PrintAllNodes();// muestra todos los nodos
+    string          PrintAllConexions(int); // muestra todas las conexiones del nodo con el id entregado
     bool            GetAdventureMap(int,int);// busca un camino entre el primer int y el segundo, que corresponden a nodos
 };
 

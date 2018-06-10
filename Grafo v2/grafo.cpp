@@ -42,6 +42,24 @@ string Grafo::PrintAllNodes(){
     return salida.str();
 };
 
+string Grafo::PrintAllConexions(int Nodo_revisar){
+    Nodo_revisar--;
+    stringstream salida;
+    for (int temp_node = 0; temp_node < cantidad_nodos; temp_node++){
+        if (Nodos_pertenecientes.at(temp_node).GetId() == Nodo_revisar){
+            salida << "Conexiones del nodo " << temp_node+1 << ": ";
+            Node Inspected_Node = Nodos_pertenecientes.at(temp_node);
+            vector<Node> Inspected_Node_conexiones = Inspected_Node.GetConexiones();
+            for (int temp_conexion = 0; temp_conexion < Inspected_Node.GetNumber_of_conections(); temp_conexion++){
+                salida << Inspected_Node_conexiones.at(temp_conexion).GetId() << " ";
+            }
+            return salida.str();
+        }
+    }
+    salida << "No hay conexiones para el nodo " << Nodo_revisar+1;
+    return salida.str();
+}
+
 bool Grafo::GetAdventureMap(int A, int B){
 // Here goes pirates stuff.... Shhh... leave
 };
