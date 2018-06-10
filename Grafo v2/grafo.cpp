@@ -15,16 +15,24 @@ Node Grafo::GetNodo(int mi_id){
     return Nodos_pertenecientes.at(mi_id);
 };
 
-void Grafo::AddNodo(){
+bool Grafo::AddNodo(){
     Node mi_nodo;
     cantidad_nodos++;
     Nodos_pertenecientes.push_back(mi_nodo);
+    return true;
 };
 
-void Grafo::DeleteNodo(int indice){
-    Nodos_pertenecientes.erase(Nodos_pertenecientes.begin() + indice - 1);
-    cantidad_nodos--;
-}
+bool Grafo::DeleteNodo(int id_ToDelete){
+    int nodos_actuales = cantidad_nodos;
+    for (int temp_node = 0; temp_node<cantidad_nodos; temp_node++){
+        if (Nodos_pertenecientes.at(temp_node).GetId() == id_ToDelete){
+            Nodos_pertenecientes.erase(Nodos_pertenecientes.begin() + temp_node);
+            cantidad_nodos--;
+            return true;
+        }
+    }
+    return false;
+};
 
 string Grafo::PrintAllNodes(){
     stringstream salida;
@@ -36,4 +44,4 @@ string Grafo::PrintAllNodes(){
 
 bool Grafo::GetAdventureMap(int A, int B){
 // Here goes pirates stuff.... Shhh... leave
-}
+};

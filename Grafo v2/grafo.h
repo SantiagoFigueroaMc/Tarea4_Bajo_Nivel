@@ -22,8 +22,8 @@ public:
 //  Tipo:           Nombre:
     int             GetName();
     Node            GetNodo(int);   // se le pasa el id del nodo y devuelve el nodo en la posicion int
-    void            AddNodo();      // se crea y agrega un nodo
-    void            DeleteNodo(int);   // borra el nodo en el indice
+    bool            AddNodo();      // se crea y agrega un nodo
+    bool            DeleteNodo(int);   // se le entrega el id del nodo a borrar
     string          PrintAllNodes();// muestra todos los nodos
     bool            GetAdventureMap(int,int);// busca un camino entre el primer int y el segundo, que corresponden a nodos
 };

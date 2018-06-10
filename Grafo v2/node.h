@@ -10,7 +10,7 @@ private:
 //Atributos:
 //  Tipo:       Nombre:
 	int 		id;
-	queue<Node> conexiones = queue<Node>();
+	vector<Node> conexiones = vector<Node>();
 public:
 //Atributos publicos:
 //  Tipo:      	Nombre:
@@ -25,7 +25,7 @@ public:
 	bool 			Add_path(Node);// Grafo le entrega el nodo
 	bool			Remove_path(Node);// Quita al nodo n de las conexiones de esta clase
 	int 			GetId();
-	queue<Node> 	GetConexiones();
+	vector<Node> 	GetConexiones();
 	int				GetNumber_of_conections();// Puede servir para ver al nodo mas popular, lo que hablamos de los arboles
 
 };
