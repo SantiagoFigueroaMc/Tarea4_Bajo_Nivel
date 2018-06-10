@@ -16,6 +16,7 @@ private:
     int             cantidad_nodos;
 public:
 //Constructor:
+	//falta el constructor vacío
     Grafo(string);// recibe el nombre del grafo
 //Metodos:
 //  Tipo:           Nombre:
