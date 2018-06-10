@@ -1,13 +1,13 @@
 #include "grafo.h"
 
 //Constructor:
-Grafo::Grafo(string mi_name){
+Grafo::Grafo(int mi_name){
     name = mi_name;
     cantidad_nodos = 0;
 };
 
 //Metodos:
-string Grafo::GetName(){
+int Grafo::GetName(){
     return name;
 };
 

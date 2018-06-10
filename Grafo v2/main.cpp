@@ -11,7 +11,7 @@ int Node::numero_nodos = 0;
 int main(){
     cout << "\nInicio programa." << endl;
     /*  Prueba de grafo     */
-    Grafo mapa_1 ("Santiago de Chile.");//Llamada al constructor.
+    Grafo mapa_1 (24500);//Llamada al constructor.
     cout << mapa_1.GetName() << endl;
     mapa_1.AddNodo();
     mapa_1.AddNodo();
