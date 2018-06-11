@@ -136,8 +136,8 @@ class Grafo(_object):
     __getattr__ = lambda self, name: _swig_getattr(self, Grafo, name)
     __repr__ = _swig_repr
 
-    def __init__(self, arg2):
-        this = _grafo.new_Grafo(arg2)
+    def __init__(self, *args):
+        this = _grafo.new_Grafo(*args)
         try:
             self.this.append(this)
         except __builtin__.Exception:
