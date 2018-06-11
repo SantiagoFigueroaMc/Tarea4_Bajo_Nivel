@@ -4,6 +4,8 @@ DEPENDENCIAS = main.o node.o grafo.o
 EX=graf
 LIB=_grafo.so
 
+hola_mundo: $(EX) $(LIB) clean
+
 $(EX): $(DEPENDENCIAS)
 	$(CC) -o $(EX) $(DEPENDENCIAS)
 	clear
