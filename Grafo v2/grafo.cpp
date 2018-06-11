@@ -32,14 +32,17 @@ int Grafo::AddNodo(){
     return mi_nodo.GetId();
 };
 
-bool Grafo::IsTherePath(int A, int B){
+bool Grafo::Hay_Arco(int A, int B){
     int index_start_node = 0;
     while (Nodos_pertenecientes.at(index_start_node).GetId() != A){
         index_start_node++;
     }
-    for (int temp_final_node = 0; temp_final_node < Nodos_pertenecientes.at(index_start_node).GetNumber_of_conections(); temp_final_node++){
-        if ()
+    map<int, int>::iterator index;
+    index = Nodos_pertenecientes.at(index_start_node).GetConexiones().find(B);
+    if (index != Nodos_pertenecientes.at(index_start_node).GetConexiones().end()){
+        return true;
     }
+    return false;
 }
 
 bool Grafo::GetAdventureMap(int A, int B){

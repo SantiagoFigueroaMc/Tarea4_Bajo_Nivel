@@ -18,6 +18,10 @@ int main(){
     }
     cout << "Nodos en la red: " << mapa_1.GetCantidad_nodos() << endl;
     mapa_1.AddConexion(1,13, 24);
+    cout << "Se creo un camino de 1 a 13, con peso 24" << endl;
+    if (mapa_1.Hay_Arco(1, 13)){
+        cout << "Hay camino de 1 a 13" << endl;
+    }
     
     //cout << mapa_1.PrintAllConexions(1) << endl;
     cout << "Fin programa.\n\n"<<endl;
