@@ -8,6 +8,7 @@ private:
 	int weight;
 public:
 	//constructor:
+	Arista(){}
 	Arista(int,int,double);
 	
 	//metodos:

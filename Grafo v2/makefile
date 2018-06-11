@@ -33,6 +33,7 @@ node.o: node.cpp node.h
 clean:
 	rm *.o
 	rm -f $(EX)
-	rm *.so
 	rm grafo.py grafo.pyc grafo_wrap.cxx
+	rm *.so
+
 

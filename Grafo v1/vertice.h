@@ -8,6 +8,7 @@ protected:
     static int n_vertice;
 public:
     // Constructor:
+    Vertice(){}
     Vertice(int);
 
     // Metodos:
