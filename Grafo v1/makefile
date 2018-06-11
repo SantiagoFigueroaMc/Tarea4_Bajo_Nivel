@@ -13,7 +13,7 @@ run: $(EX)
 $(LIB): grafo.o grafo.h
 	swig -python -c++ grafo.i
 	$(CC) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
-	$(CC) -L grafo.cpp  vertice.cpp arista.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
+	$(CC) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
 
 ninja:
 	$(CC) $(FLAGS) -c -o main.o main.cpp
@@ -21,9 +21,10 @@ ninja:
 	$(CC) $(FLAGS) -c -o vertice.o vertice.cpp
 	$(CC) $(FLAGS) -c -o grafo.o grafo.cpp
 	$(CC) $(FLAGS) -o $(EX) $(DEPENDENCIAS)
+
 	swig -python -c++ grafo.i
-	$(CC) $(FLAGS) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
-	$(CC) $(FLAGS) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
+	$(CC) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
+	$(CC) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
 
 grafo.o: grafo.cpp grafo.h vertice.cpp vertice.h arista.cpp arista.h
 	$(CC) -c -fPIC grafo.cpp vertice.cpp arista.cpp
