@@ -23,7 +23,7 @@ ninja:
 	$(CC) $(FLAGS) -o $(EX) $(DEPENDENCIAS)
 	swig -python -c++ grafo.i
 	$(CC) $(FLAGS) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
-	$(CC) $(FLAGS) -L grafo.cpp  vertice.cpp arista.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
+	$(CC) $(FLAGS) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
 
 grafo.o: grafo.cpp grafo.h vertice.cpp vertice.h arista.cpp arista.h
 	$(CC) -c -fPIC grafo.cpp vertice.cpp arista.cpp
