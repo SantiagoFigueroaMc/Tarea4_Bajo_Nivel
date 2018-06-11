@@ -67,7 +67,7 @@ int main (){
 	printV(*santiago);
 	printV(*extra);
 	//proba add_nodo
-	for (int j=0;j<10;j++){
+	for (int j=0;j<11;j++){
 		waze->add_nodo();
 	}
 	
@@ -102,6 +102,8 @@ int main (){
 	funcionadd_narcos(waze,8,5,3);
 	funcionadd_narcos(waze,8,7,4);
 	funcionadd_narcos(waze,9,6,4);
+	funcionadd_narcos(waze,10,6,16);
+	funcionadd_narcos(waze,100,60000,16);
 	
 	printV(*waze);
 	cout<< "arcos" <<endl;
@@ -110,8 +112,18 @@ int main (){
 	printA(*moovit);
 	printA(*santiago);
 	printA(*extra);
-	cout<<waze->hay_arco(1,2)<<";"<<waze->hay_arco(2,1);
-	cout<<";"<<waze->hay_arco(0,3)<<endl;
+	bool b1=waze->hay_arco(1,2);
+	cout<< b1<<endl;
+	bool b2=waze->hay_arco(2,1);
+	cout<< b2<<endl;
+	bool b3=waze->hay_arco(0,3);
+	cout<< b3<<endl;
+	bool b4=waze->hay_arco(10,3);
+	cout<< b4<<endl;
+	bool b5=waze->hay_arco(10,6);
+	cout<< b5<<endl;
+	bool b6=waze->hay_arco(100,60000);
+	cout<< b6<<endl;
 
 	delete(waze);delete(maps);delete(moovit);delete(santiago);delete(extra);
 	return 0;

@@ -30,7 +30,8 @@ Grafo::Grafo(int numnodos){
 }	
 
 // Crea un arco entre las aristas d y h, donde la dirección es desde d a h y el peso es w.
-void Grafo::add_arco(int d, int h, int w){
+void Grafo::add_arco(int d, int h, int w=1){
+	//ADD:que no agregue cuando es el mismo nodo
 	Arista ari=Arista(d,h,w);
 	aristas.push_back(ari);
 }
@@ -46,15 +47,25 @@ int Grafo::add_nodo(){
 
 //Metodo para ver si existe un camino entre dos nodos.
 // d ---> h
-bool Grafo::hay_arco(int d, int h){
+bool Grafo::hay_arco(int d, int h){//Reconoce dos digitos
 	stringstream ss = stringstream();
-	ss << d << h;
+	ss << d <<"->"<< h;
 	unsigned int c=0;
 	string avector,abuscada=ss.str();
+	string abuscada1,abuscada2;
+	abuscada1=abuscada.substr(0,abuscada.find("->"));
+	abuscada2=abuscada.substr((int)abuscada.find("->")+2);
 	while (c<aristas.size()){
 		Arista arco=GetArista(c);
 		avector=arco.Get_Arista();
-		if ((avector[0] == abuscada[0]) && (avector[1] == abuscada[1])){
+		string avector1,avector2;
+		avector1=avector.substr(0,avector.find("->"));
+		avector2=avector.substr((int)avector.find("->")+2);
+		/*
+		cout<< "hay_arco("<<d<< "," <<h<< "),"<<"c="<<c <<endl;
+		cout<< abuscada1+" "+abuscada2<< ";"<< avector1+" "+avector2 <<endl;
+		*/
+		if ((avector1 == abuscada1) && (avector2 == abuscada2)){
 				return true;
 			}
 		c++;//GET IT? C plus plus XD
@@ -62,6 +73,30 @@ bool Grafo::hay_arco(int d, int h){
 	return false;
 }
 
+int Grafo::GetWeight(int d,int h){
+	if (hay_arco(d,h)==true){
+		stringstream ss = stringstream();
+		ss << d << h;
+		unsigned int c=0;
+		string avector,abuscada=ss.str();
+	string abuscada1,abuscada2;
+	abuscada1=abuscada.substr(0,abuscada.find("->"));
+	abuscada2=abuscada.substr((int)abuscada.find("->")+2);
+	while (c<aristas.size()){
+		Arista arco=GetArista(c);
+		avector=arco.Get_Arista();
+		string avector1,avector2;
+		avector1=avector.substr(0,avector.find("->"));
+		avector2=avector.substr((int)avector.find("->")+2);
+		if ((avector1 == abuscada1) && (avector2 == abuscada2)){
+				return arco.Get_Weight();
+			}
+			c++;
+		}
+		return 0;
+	}
+	else return 0;
+}
 // Retorna true si existe un camino entre d y h o false en caso contrario.
 // d <---> h
 bool Grafo::hay_camino(int d, int h){//incompleto

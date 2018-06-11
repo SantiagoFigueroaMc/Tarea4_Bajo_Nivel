@@ -31,9 +31,10 @@ public:
 	unsigned int GetLenVertices();
 	Vertice GetVertice(int);
 	unsigned int GetLenAristas();
-	Arista GetArista(int);
+	Arista GetArista(int);//es similar a la función Get_Arista() de la calse arista
 	int GetVertices_Iniciales();
 	int GetVertices_Creados();
+	int GetWeight(int,int);
 };
 
 #endif
