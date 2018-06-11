@@ -32,7 +32,7 @@ int Grafo::AddNodo(){
     return mi_nodo.GetId();
 };
 
-bool Grafo::hay_arco(int A, int B){
+bool Grafo::Hay_Arco(int A, int B){
     int index_start_node = 0;
     while (Nodos_pertenecientes.at(index_start_node).GetId() != A){
         index_start_node++;

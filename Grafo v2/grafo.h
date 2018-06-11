@@ -30,7 +30,7 @@ public:
     int             GetCantidad_nodos();
 //Tarea:
 //  Tipo:           Nombre:
-    bool            hay_arco(int, int);      // revisa si hay camino de A a B. A-->B
+    bool            Hay_Arco(int, int);      // revisa si hay camino de A a B. A-->B
 };
 
 #endif
