@@ -6,7 +6,7 @@ print(" Creando un Grafo Vacío ")
 prueba = gra.Grafo()
 
 """ agregando los nodos """
-print(" Agregando los nodos ")
+print(" agregando los nodos ")
 c=0
 while (c<101):
 	numnodo=prueba.add_nodo()
@@ -38,8 +38,8 @@ prueba.add_arco(waze,8,6,5);
 prueba.add_arco(waze,8,5,3);
 prueba.add_arco(waze,8,7,4);
 prueba.add_arco(waze,9,6,4);
-uncionadd_narcos(waze,10,6,16);
-funcionadd_narcos(waze,100,60,16);
+prueba.dd_arco(waze,10,6,16);
+prueba.add_arco(waze,100,60,16);
 
 """ Ver si hay un camino """
 print(" Ver si hay un camino entre "+str(1)+" y "+str(2)+":"+str(prueba.hay_arco(1,2)))
