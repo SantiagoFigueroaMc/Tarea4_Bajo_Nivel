@@ -17,7 +17,7 @@ int main(){
         cout << mapa_1.AddNodo() << endl;
     }
     cout << "Nodos en la red: " << mapa_1.GetCantidad_nodos() << endl;
-    cout << mapa_1.AddConexion(1,13) << endl;
+    mapa_1.AddConexion(1,13, 24);
     
     //cout << mapa_1.PrintAllConexions(1) << endl;
     cout << "Fin programa.\n\n"<<endl;
