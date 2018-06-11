@@ -17,10 +17,8 @@ $(LIB): grafo.o grafo.h
 
 ninja:
 	$(CC) $(FLAGS) -c -o main.o main.cpp
-	$(CC) $(FLAGS) -c -o arista.o arista.cpp
-	$(CC) $(FLAGS) -c -o vertice.o vertice.cpp
 	$(CC) $(FLAGS) -c -fPIC -o grafo.o grafo.cpp arista.cpp vertice.cpp
-	$(CC) $(FLAGS) -o $(EX) $(DEPENDENCIAS)
+	$(CC) $(FLAGS) -o $(EX) grafo.o main.o
 	swig -python -c++ grafo.i
 	$(CC) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
 	$(CC) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
