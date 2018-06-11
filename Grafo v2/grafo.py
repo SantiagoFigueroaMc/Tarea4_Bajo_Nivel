@@ -116,8 +116,20 @@ class Grafo(_object):
     def DeleteNodo(self, arg2):
         return _grafo.Grafo_DeleteNodo(self, arg2)
 
+    def AddConexion(self, arg2, arg3):
+        return _grafo.Grafo_AddConexion(self, arg2, arg3)
+
+    def DeleteConexion(self, arg2, arg3):
+        return _grafo.Grafo_DeleteConexion(self, arg2, arg3)
+
     def PrintAllNodes(self):
         return _grafo.Grafo_PrintAllNodes(self)
+
+    def PrintAllConexions(self, arg2):
+        return _grafo.Grafo_PrintAllConexions(self, arg2)
+
+    def GetAdventureMap(self, arg2, arg3):
+        return _grafo.Grafo_GetAdventureMap(self, arg2, arg3)
     __swig_destroy__ = _grafo.delete_Grafo
     __del__ = lambda self: None
 Grafo_swigregister = _grafo.Grafo_swigregister

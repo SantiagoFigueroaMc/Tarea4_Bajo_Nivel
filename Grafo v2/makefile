@@ -21,8 +21,8 @@ $(LIB): grafo.o grafo.h
 	$(CC) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
 	$(CC) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
 
-grafo.o: grafo.cpp node.h node.o
-	$(CC) -c -fPIC grafo.cpp node.o
+grafo.o: grafo.cpp node.h node.cpp grafo.h
+	$(CC) -c -fPIC grafo.cpp node.cpp
 
 main.o: main.cpp node.h
 	$(CC) -c main.cpp

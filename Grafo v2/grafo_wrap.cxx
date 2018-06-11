@@ -3269,31 +3269,37 @@ SWIG_AsVal_int (PyObject * obj, int *val)
   return res;
 }
 
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_int  (int value)
+{
+  return PyInt_FromLong((long) value);
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_bool  (bool value)
+{
+  return PyBool_FromLong(value ? 1 : 0);
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 SWIGINTERN PyObject *_wrap_new_Grafo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  string arg1 ;
-  void *argp1 ;
-  int res1 = 0 ;
+  int arg1 ;
+  int val1 ;
+  int ecode1 = 0 ;
   PyObject * obj0 = 0 ;
   Grafo *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"O:new_Grafo",&obj0)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_string,  0  | 0);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Grafo" "', argument " "1"" of type '" "string""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Grafo" "', argument " "1"" of type '" "string""'");
-    } else {
-      string * temp = reinterpret_cast< string * >(argp1);
-      arg1 = *temp;
-      if (SWIG_IsNewObj(res1)) delete temp;
-    }
-  }
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Grafo" "', argument " "1"" of type '" "int""'");
+  } 
+  arg1 = static_cast< int >(val1);
   result = (Grafo *)new Grafo(arg1);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Grafo, SWIG_POINTER_NEW |  0 );
   return resultobj;
@@ -3308,7 +3314,7 @@ SWIGINTERN PyObject *_wrap_Grafo_GetName(PyObject *SWIGUNUSEDPARM(self), PyObjec
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  string result;
+  int result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Grafo_GetName",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
@@ -3316,8 +3322,8 @@ SWIGINTERN PyObject *_wrap_Grafo_GetName(PyObject *SWIGUNUSEDPARM(self), PyObjec
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_GetName" "', argument " "1"" of type '" "Grafo *""'"); 
   }
   arg1 = reinterpret_cast< Grafo * >(argp1);
-  result = (arg1)->GetName();
-  resultobj = SWIG_NewPointerObj((new string(static_cast< const string& >(result))), SWIGTYPE_p_string, SWIG_POINTER_OWN |  0 );
+  result = (int)(arg1)->GetName();
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -3361,6 +3367,7 @@ SWIGINTERN PyObject *_wrap_Grafo_AddNodo(PyObject *SWIGUNUSEDPARM(self), PyObjec
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
+  int result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:Grafo_AddNodo",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
@@ -3368,8 +3375,8 @@ SWIGINTERN PyObject *_wrap_Grafo_AddNodo(PyObject *SWIGUNUSEDPARM(self), PyObjec
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_AddNodo" "', argument " "1"" of type '" "Grafo *""'"); 
   }
   arg1 = reinterpret_cast< Grafo * >(argp1);
-  (arg1)->AddNodo();
-  resultobj = SWIG_Py_Void();
+  result = (int)(arg1)->AddNodo();
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -3406,6 +3413,86 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Grafo_AddConexion(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Grafo *arg1 = (Grafo *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Grafo_AddConexion",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_AddConexion" "', argument " "1"" of type '" "Grafo *""'"); 
+  }
+  arg1 = reinterpret_cast< Grafo * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Grafo_AddConexion" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Grafo_AddConexion" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  result = (arg1)->AddConexion(arg2,arg3);
+  resultobj = SWIG_NewPointerObj((new string(static_cast< const string& >(result))), SWIGTYPE_p_string, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Grafo_DeleteConexion(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Grafo *arg1 = (Grafo *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Grafo_DeleteConexion",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_DeleteConexion" "', argument " "1"" of type '" "Grafo *""'"); 
+  }
+  arg1 = reinterpret_cast< Grafo * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Grafo_DeleteConexion" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Grafo_DeleteConexion" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  result = (bool)(arg1)->DeleteConexion(arg2,arg3);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Grafo_PrintAllNodes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Grafo *arg1 = (Grafo *) 0 ;
@@ -3422,6 +3509,77 @@ SWIGINTERN PyObject *_wrap_Grafo_PrintAllNodes(PyObject *SWIGUNUSEDPARM(self), P
   arg1 = reinterpret_cast< Grafo * >(argp1);
   result = (arg1)->PrintAllNodes();
   resultobj = SWIG_NewPointerObj((new string(static_cast< const string& >(result))), SWIGTYPE_p_string, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Grafo_PrintAllConexions(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Grafo *arg1 = (Grafo *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Grafo_PrintAllConexions",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_PrintAllConexions" "', argument " "1"" of type '" "Grafo *""'"); 
+  }
+  arg1 = reinterpret_cast< Grafo * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Grafo_PrintAllConexions" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  result = (arg1)->PrintAllConexions(arg2);
+  resultobj = SWIG_NewPointerObj((new string(static_cast< const string& >(result))), SWIGTYPE_p_string, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Grafo_GetAdventureMap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Grafo *arg1 = (Grafo *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Grafo_GetAdventureMap",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_GetAdventureMap" "', argument " "1"" of type '" "Grafo *""'"); 
+  }
+  arg1 = reinterpret_cast< Grafo * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Grafo_GetAdventureMap" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Grafo_GetAdventureMap" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  result = (bool)(arg1)->GetAdventureMap(arg2,arg3);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
   return NULL;
@@ -3463,7 +3621,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Grafo_GetNodo", _wrap_Grafo_GetNodo, METH_VARARGS, NULL},
 	 { (char *)"Grafo_AddNodo", _wrap_Grafo_AddNodo, METH_VARARGS, NULL},
 	 { (char *)"Grafo_DeleteNodo", _wrap_Grafo_DeleteNodo, METH_VARARGS, NULL},
+	 { (char *)"Grafo_AddConexion", _wrap_Grafo_AddConexion, METH_VARARGS, NULL},
+	 { (char *)"Grafo_DeleteConexion", _wrap_Grafo_DeleteConexion, METH_VARARGS, NULL},
 	 { (char *)"Grafo_PrintAllNodes", _wrap_Grafo_PrintAllNodes, METH_VARARGS, NULL},
+	 { (char *)"Grafo_PrintAllConexions", _wrap_Grafo_PrintAllConexions, METH_VARARGS, NULL},
+	 { (char *)"Grafo_GetAdventureMap", _wrap_Grafo_GetAdventureMap, METH_VARARGS, NULL},
 	 { (char *)"delete_Grafo", _wrap_delete_Grafo, METH_VARARGS, NULL},
 	 { (char *)"Grafo_swigregister", Grafo_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
