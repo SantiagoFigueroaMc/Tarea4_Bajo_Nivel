@@ -21,7 +21,6 @@ ninja:
 	$(CC) $(FLAGS) -c -o vertice.o vertice.cpp
 	$(CC) $(FLAGS) -c -o grafo.o grafo.cpp
 	$(CC) $(FLAGS) -o $(EX) $(DEPENDENCIAS)
-
 	swig -python -c++ grafo.i
 	$(CC) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
 	$(CC) -L grafo.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
@@ -40,11 +39,6 @@ arista.o: arista.cpp arista.h
 
 vertice.o: vertice.cpp vertice.h
 	$(CC) -c vertice.cpp
-
-
-
-node.o: node.cpp node.h
-	$(CC) -c node.cpp
 
 clean:
 	rm *.o
