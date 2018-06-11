@@ -28,12 +28,11 @@ int Node::GetNumber_of_conections(){
 
 
 // GRAFO //
-
+int Grafo::cantidad_nodos = 0;
 //Constructor:
 Grafo::Grafo(int nodos_a_crear){
-    cantidad_nodos = 0;
     while (cantidad_nodos < nodos_a_crear){
-        add_nodo(cantidad_nodos);
+        add_nodo();
     }
 };
 
@@ -42,8 +41,8 @@ Node Grafo::GetNodo(int mi_id){
     return Nodos_pertenecientes.at(mi_id);
 };
 
-int Grafo::add_nodo(int id){
-    Node mi_nodo (id);
+int Grafo::add_nodo(){
+    Node mi_nodo (cantidad_nodos);
     cantidad_nodos++;
     Nodos_pertenecientes.push_back(mi_nodo);
     return mi_nodo.GetId();
@@ -87,4 +86,13 @@ bool Grafo::hay_camino(int A, int B){
 
 int Grafo::GetCantidad_nodos(){
     return cantidad_nodos;
+};
+
+int Grafo::GetWeight(int A, int B){
+    map<int, int>::iterator index;
+    index = Nodos_pertenecientes.at(A).GetConexiones().find(B);
+    if (index != Nodos_pertenecientes.at(A).GetConexiones().end()){
+        return index->second;
+    }
+    return 0;
 };

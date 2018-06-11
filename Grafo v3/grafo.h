@@ -35,7 +35,7 @@ private:
 //Atributos:
 //  Tipo:           Nombre:
     vector<Node>    Nodos_pertenecientes;
-    int             cantidad_nodos;
+    static int      cantidad_nodos;
 public:
 //Constructor:
 	//falta el constructor vacío
@@ -45,12 +45,13 @@ public:
 //Metodos:
 //  Tipo:           Nombre:
     void            add_arco(int, int, int);      // se le entrega el nodo de donde parte el camino, el nodo a unir y el peso
-    int             add_nodo(int);                    // se crea y agrega un nodo
+    int             add_nodo();                    // se crea y agrega un nodo
     bool            hay_arco(int, int);              // revisa si hay camino de A a B. A-->B
     bool            hay_camino(int,int);        // busca un camino entre el primer int y el segundo, que corresponden a nodos
 
     Node            GetNodo(int);                    // se le pasa el id del nodo y devuelve el nodo en la posicion int
-    int             GetCantidad_nodos();
+    static int      GetCantidad_nodos();
+    int             GetWeight(int, int);
 };
 
 
