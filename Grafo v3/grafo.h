@@ -44,16 +44,6 @@ public:
 
 //Metodos:
 //  Tipo:           Nombre:
-<<<<<<< HEAD
-    void            add_arco(int, int, int);   // se le entrega el nodo de donde parte el camino, el nodo a unir y el peso
-    int             add_nodo();                // se crea y agrega un nodo
-    bool            hay_arco(int, int);        // revisa si hay camino de A a B. A-->B
-    bool            hay_camino(int,int);       // busca un camino entre el primer int y el segundo, que corresponden a nodos
-
-    Node            GetNodo(int);              // se le pasa el id del nodo y devuelve el nodo en la posicion int
-    static int      GetCantidad_nodos();
-    int             GetWeight(int, int);
-=======
     void            add_arco(int, int, int); // se le entrega el nodo de donde parte el camino, el nodo a unir y el peso
     int             add_nodo();              // se crea y agrega un nodo
     bool            hay_arco(int, int);      // revisa si hay camino de A a B. A-->B
@@ -62,7 +52,6 @@ public:
     Node            GetNodo(int);            // se le pasa el id del nodo y devuelve el nodo en la posicion int
     static int      GetCantidad_nodos();	 // retrona el numero de nodos, es static
     int             GetWeight(int, int);	 // retorna el peso si hay arco
->>>>>>> f907e8123fc8a867f6f8ba8ced8f9a92a7d7ebee
 };
 
 
