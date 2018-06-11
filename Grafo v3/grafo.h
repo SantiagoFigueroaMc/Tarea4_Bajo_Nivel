@@ -24,10 +24,10 @@ public:
 
 //Metodos:
 //  Tipo:     		Nombre:
-	bool 			Add_path(int, int);// Grafo le entrega el Id del nodo y el peso
+	bool 			Add_path(int, int);         // Grafo le entrega el Id del nodo y el peso
 	int 			GetId();
 	map<int, int> 	GetConexiones();
-	int				GetNumber_of_conections();// Puede servir para ver al nodo mas popular, lo que hablamos de los arboles
+	int				GetNumber_of_conections();  // Puede servir para ver al nodo mas popular, lo que hablamos de los arboles
 };
 
 class Grafo {
@@ -44,12 +44,12 @@ public:
 
 //Metodos:
 //  Tipo:           Nombre:
-    void            add_arco(int, int, int);      // se le entrega el nodo de donde parte el camino, el nodo a unir y el peso
-    int             add_nodo();                    // se crea y agrega un nodo
-    bool            hay_arco(int, int);              // revisa si hay camino de A a B. A-->B
-    bool            hay_camino(int,int);        // busca un camino entre el primer int y el segundo, que corresponden a nodos
+    void            add_arco(int, int, int);   // se le entrega el nodo de donde parte el camino, el nodo a unir y el peso
+    int             add_nodo();                // se crea y agrega un nodo
+    bool            hay_arco(int, int);        // revisa si hay camino de A a B. A-->B
+    bool            hay_camino(int,int);       // busca un camino entre el primer int y el segundo, que corresponden a nodos
 
-    Node            GetNodo(int);                    // se le pasa el id del nodo y devuelve el nodo en la posicion int
+    Node            GetNodo(int);              // se le pasa el id del nodo y devuelve el nodo en la posicion int
     static int      GetCantidad_nodos();
     int             GetWeight(int, int);
 };
