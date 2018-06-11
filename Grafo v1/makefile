@@ -25,6 +25,8 @@ ninja:
 	$(CC) $(FLAGS) -fPIC -c grafo_wrap.cxx -I/usr/include/python2.7/
 	$(CC) $(FLAGS) -L grafo.cpp  vertice.cpp arista.cpp -shared grafo.o grafo_wrap.o -o $(LIB)
 
+grafo.o: grafo.cpp grafo.h vertice.cpp vertice.h arista.cpp arista.h
+	$(CC) -c -fPIC grafo.cpp vertice.cpp arista.cpp
 
 $(EX): $(DEPENDENCIAS)
 	$(CC) $(FLAGS) -o $(EX) $(DEPENDENCIAS)
@@ -38,8 +40,7 @@ arista.o: arista.cpp arista.h
 vertice.o: vertice.cpp vertice.h
 	$(CC) -c vertice.cpp
 
-grafo.o: grafo.cpp grafo.h vertice.cpp vertice.h arista.cpp arista.h
-	$(CC) -c grafo.cpp vertice.cpp arista.cpp
+
 
 node.o: node.cpp node.h
 	$(CC) -c node.cpp
