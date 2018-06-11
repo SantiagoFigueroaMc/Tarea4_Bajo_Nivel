@@ -1,10 +1,10 @@
 #include "grafo.h"
 using namespace std;
 
+// NODO //
 //Constructor:
-Node::Node(){
-	numero_nodos++;
-	id = numero_nodos;
+Node::Node(int mi_id){
+	id = mi_id;
 };
 
 //Metodo para agregar un camino a un nodo n.
@@ -26,22 +26,30 @@ int Node::GetNumber_of_conections(){
 	return numero_conexiones;
 };
 
+
+// GRAFO //
+
 //Constructor:
-Grafo::Grafo(int mi_name){
-    name = mi_name;
+Grafo::Grafo(int nodos_a_crear){
     cantidad_nodos = 0;
+    while (cantidad_nodos < nodos_a_crear){
+        add_nodo(cantidad_nodos);
+    }
 };
 
 //Metodos:
-int Grafo::GetName(){
-    return name;
-};
-
 Node Grafo::GetNodo(int mi_id){
     return Nodos_pertenecientes.at(mi_id);
 };
 
-void Grafo::AddConexion(int nodo_inicial, int nodo_final, int weight){
+int Grafo::add_nodo(int id){
+    Node mi_nodo (id);
+    cantidad_nodos++;
+    Nodos_pertenecientes.push_back(mi_nodo);
+    return mi_nodo.GetId();
+};
+
+void Grafo::add_arco(int nodo_inicial, int nodo_final, int weight){
     // Estas lineas buscan al nodo inicial
     int index_start_node = 0;
     while (Nodos_pertenecientes.at(index_start_node).GetId() != nodo_inicial){
@@ -51,12 +59,6 @@ void Grafo::AddConexion(int nodo_inicial, int nodo_final, int weight){
     Nodos_pertenecientes.at(index_start_node).Add_path(nodo_final,weight);
 };
 
-int Grafo::AddNodo(){
-    Node mi_nodo;
-    cantidad_nodos++;
-    Nodos_pertenecientes.push_back(mi_nodo);
-    return mi_nodo.GetId();
-};
 
 bool Grafo::hay_arco(int A, int B){
     int index_start_node = 0;
@@ -71,8 +73,16 @@ bool Grafo::hay_arco(int A, int B){
     return false;
 }
 
-bool Grafo::GetAdventureMap(int A, int B){
-// Here goes pirates stuff.... Shhh... leave
+bool Grafo::hay_camino(int A, int B){
+    /*
+    1. Guardar primer nodo en el stack
+    2. 
+    */ /*
+    stack<int> ruta = stack<int>();
+    ruta.push(A);//se agrega el nodo inicial
+    map<int,int> nodo_nodosPorRevisar;
+    while (nodo_actual!=B)
+    */
 };
 
 int Grafo::GetCantidad_nodos(){
