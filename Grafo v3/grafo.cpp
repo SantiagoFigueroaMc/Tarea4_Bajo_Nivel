@@ -30,7 +30,9 @@ int Node::GetNumber_of_conections(){
 // GRAFO //
 int Grafo::cantidad_nodos = 0;
 //Constructor:
-Grafo::Grafo(int nodos_a_crear){
+Grafo::Grafo(){};
+
+Grafo::Grafo(int nodos_a_crear=0){
     while (cantidad_nodos < nodos_a_crear){
         add_nodo();
     }
