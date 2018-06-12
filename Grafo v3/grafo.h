@@ -36,6 +36,7 @@ private:
 //  Tipo:           Nombre:
     vector<Node>    Nodos_pertenecientes;
     static int      cantidad_nodos;
+    map<int, int>   estack;
 	vector<Node>    Caminos;
 	vector<Node>    cambiodenodo(Node,vector<Node>&,int);
 public:

@@ -79,17 +79,26 @@ vector<Node> Grafo::cambiodenodo(Node nodoactual,vector<Node>& camino,int h){
 	return camino;
 }
 
-bool Grafo::hay_camino(int d, int h){
-    /*
-    1. Guardar primer nodo en el stack
-    2. 
-    */ /*
-    stack<int> ruta = stack<int>();
-    ruta.push(A);//se agrega el nodo inicial
-    map<int,int> nodo_nodosPorRevisar;
-    while (nodo_actual!=B)
-    */
-	return Caminos.size()!=0;
+bool Grafo::hay_camino(int inicio, int finall){
+    estack.emplace(inicio, 1);
+    map<int, int> nodos_por_revisar = Nodos_pertenecientes.at(inicio).GetConexiones();
+    for (auto& x: nodos_por_revisar) {
+        for (auto& y: estack){
+            if (x.first == y.first){
+                nodos_por_revisar.erase(x.first);
+            }
+        }
+    }
+    if (inicio == finall){
+        estack.clear();
+        return true;
+    }
+    for (auto& nada: nodos_por_revisar){
+        if (hay_camino(nada.first, finall)){
+            return true;
+        }
+    }
+    return false;
 };
 
 Grafo Grafo::ruta_optima(int d,int h){

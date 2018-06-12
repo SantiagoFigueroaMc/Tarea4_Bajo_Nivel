@@ -3711,6 +3711,46 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Grafo_ruta_optima(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Grafo *arg1 = (Grafo *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  Grafo result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Grafo_ruta_optima",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Grafo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Grafo_ruta_optima" "', argument " "1"" of type '" "Grafo *""'"); 
+  }
+  arg1 = reinterpret_cast< Grafo * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Grafo_ruta_optima" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Grafo_ruta_optima" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  result = (arg1)->ruta_optima(arg2,arg3);
+  resultobj = SWIG_NewPointerObj((new Grafo(static_cast< const Grafo& >(result))), SWIGTYPE_p_Grafo, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Grafo_GetNodo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Grafo *arg1 = (Grafo *) 0 ;
@@ -3839,6 +3879,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Grafo_add_nodo", _wrap_Grafo_add_nodo, METH_VARARGS, NULL},
 	 { (char *)"Grafo_hay_arco", _wrap_Grafo_hay_arco, METH_VARARGS, NULL},
 	 { (char *)"Grafo_hay_camino", _wrap_Grafo_hay_camino, METH_VARARGS, NULL},
+	 { (char *)"Grafo_ruta_optima", _wrap_Grafo_ruta_optima, METH_VARARGS, NULL},
 	 { (char *)"Grafo_GetNodo", _wrap_Grafo_GetNodo, METH_VARARGS, NULL},
 	 { (char *)"Grafo_GetCantidad_nodos", _wrap_Grafo_GetCantidad_nodos, METH_VARARGS, NULL},
 	 { (char *)"Grafo_GetWeight", _wrap_Grafo_GetWeight, METH_VARARGS, NULL},

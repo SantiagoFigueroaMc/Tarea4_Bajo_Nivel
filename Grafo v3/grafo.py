@@ -155,6 +155,9 @@ class Grafo(_object):
     def hay_camino(self, arg2, arg3):
         return _grafo.Grafo_hay_camino(self, arg2, arg3)
 
+    def ruta_optima(self, arg2, arg3):
+        return _grafo.Grafo_ruta_optima(self, arg2, arg3)
+
     def GetNodo(self, arg2):
         return _grafo.Grafo_GetNodo(self, arg2)
     if _newclass:
