@@ -32,7 +32,7 @@ int Grafo::cantidad_nodos = 0;
 //Constructor:
 Grafo::Grafo(){};
 
-Grafo::Grafo(int nodos_a_crear=0){
+Grafo::Grafo(int nodos_a_crear){
     while (cantidad_nodos < nodos_a_crear){
         add_nodo();
     }
@@ -74,7 +74,12 @@ bool Grafo::hay_arco(int A, int B){
     return false;
 }
 
-bool Grafo::hay_camino(int A, int B){
+vector<Node> Grafo::cambiodenodo(Node nodoactual,vector<Node>& camino,int h){
+	//recursividad con vectores, uff
+	return camino;
+}
+
+bool Grafo::hay_camino(int d, int h){
     /*
     1. Guardar primer nodo en el stack
     2. 
@@ -84,7 +89,14 @@ bool Grafo::hay_camino(int A, int B){
     map<int,int> nodo_nodosPorRevisar;
     while (nodo_actual!=B)
     */
+	return Caminos.size()!=0;
 };
+
+Grafo Grafo::ruta_optima(int d,int h){
+	Grafo grafo_ruta=Grafo();
+	//cacha los hackerman, se inicializa vacio
+	return grafo_ruta;
+}
 
 int Grafo::GetCantidad_nodos(){
     return cantidad_nodos;

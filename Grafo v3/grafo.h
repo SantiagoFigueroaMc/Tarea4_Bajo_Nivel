@@ -36,6 +36,8 @@ private:
 //  Tipo:           Nombre:
     vector<Node>    Nodos_pertenecientes;
     static int      cantidad_nodos;
+	vector<Node>    Caminos;
+	vector<Node>    cambiodenodo(Node,vector<Node>&,int);
 public:
 //Constructor:
 	Grafo();//Grafo vacio
@@ -48,6 +50,7 @@ public:
     int             add_nodo();              // se crea y agrega un nodo
     bool            hay_arco(int, int);      // revisa si hay camino de A a B. A-->B
     bool            hay_camino(int,int);     // busca un camino entre el primer int y el segundo, que corresponden a nodos
+	Grafo           ruta_optima(int,int);
 
     Node            GetNodo(int);            // se le pasa el id del nodo y devuelve el nodo en la posicion int
     static int      GetCantidad_nodos();	 // retrona el numero de nodos, es static
